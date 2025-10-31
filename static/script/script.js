@@ -95,7 +95,7 @@ ac.addEventListener("click", function() {
         if (data.email) {
             document.getElementById("login-email").value = "";
             document.getElementById("login-password").value = "";
-            window.location.href = data.redirect + "?email=" + data.email;
+            window.location.href = data.redirect;
         } else {
             document.getElementById("login-error").innerText = data.error;
         }

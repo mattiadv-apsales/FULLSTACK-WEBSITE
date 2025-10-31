@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Welcome</title>
+    <link rel = "stylesheet" href = "../static/style/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab-slider" id="slider"></div>
+            <div class="tab active" onclick="switchTab('login')">Login</div>
+            <div class="tab" onclick="switchTab('register')">Registrati</div>
+        </div>
+
+        <div class="form-content">
+            <div class="form-section active" id="login-form">
+                <h2>Bentornato!</h2>
+                <p class="subtitle">Accedi al tuo account</p>
+                
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="nome@esempio.com" id = "login-email">
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="login-password" placeholder="••••••••">
+                    <span class="password-toggle" onclick="togglePassword('login-password')">👁️</span>
+                </div>
+
+                <div id = "login-error"></div>
+
+                <button id = "access">Accedi</button>
+            </div>
+
+            <div class="form-section" id="register-form">
+                <h2>Crea Account</h2>
+                <p class="subtitle">Inizia gratuitamente</p>
+                
+                <div class="input-group">
+                    <label>Nome completo</label>
+                    <input type="text" placeholder="Mario Rossi" id = "reg-name">
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="nome@esempio.com" id = "reg-email">
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" id = "reg-password">
+                    <span class="password-toggle" onclick="togglePassword('reg-password')">👁️</span>
+                </div>
+
+                <div class="input-group">
+                    <label>Conferma Password</label>
+                    <input type="password" id="confirm-password" placeholder="••••••••">
+                    <span class="password-toggle" onclick="togglePassword('confirm-password')">👁️</span>
+                </div>
+
+                <div id = "success"></div>
+
+                <button id = "regi">Registrati</button>
+            </div>
+        </div>
+    </div>
+    <script src="../static/script/script.js"></script>
+</body>
+</html>

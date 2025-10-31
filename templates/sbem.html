@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link link rel="stylesheet" href="../static/style/sbem.css">
+</head>
+<body>
+    <div class = "logout-container">
+        <button class="add-btn no" id = "logout">LOGOUT</button>
+    </div>
+    <div class="container">
+        <h1>📝 Le Attività Di {{ email }}</h1>
+        
+        <div class="input-container">
+            <input type="text" id="todoInput" placeholder="Aggiungi una nuova attività...">
+            <button class="add-btn" onclick="addTodo()">Aggiungi</button>
+        </div>
+
+        <ul class="todo-list" id="todoList">
+            {% if todos %}
+                {% for todo in todos %}
+                    <li class="todo-item {% if todo.is_checked %}completed{% endif %}">
+                        <input type="checkbox" onchange="toggleTodo(this)" {% if todo.is_checked %}checked{% endif %}>
+                        <span class="todo-text">{{ todo.todo }}</span>
+                        <button class="delete-btn" onclick="deleteTodo(this)">Elimina</button>
+                    </li>
+                {% endfor %}
+            {% else %}
+            <div class="empty-state" id = "empty-state">
+                <p>Nessuna attività. Inizia aggiungendone una! ✨</p>
+            </div>
+            {% endif %}
+        </ul>
+    </div>
+
+    <script src="../static/script/sbem.js"></script>
+</body>
+</html>
